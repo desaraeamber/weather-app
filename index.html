@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="full-container">
+      <div class="main container">
+        <div class="search">
+          <form>
+            <input
+              type="text"
+              id="form-input"
+              placeholder="Enter your city"
+              value=""
+            />
+            <button class="search-button" type="submit">Search</button>
+            <button class="current" type="submit">Current</button>
+          </form>
+        </div>
+
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <h4 class="slider-degrees-c">°C</h4>
+        <div class="flex">
+          <section class="temperature-section">
+            <h3 class="icon">☀️</h3>
+            <h1 class="temp">
+              90
+            </h1>
+            <h3 class="degrees">°F</h3>
+          </section>
+          <section class="location">
+            <h1 id="city-name">
+              New York, NY
+            </h1>
+            <h2 id="date-time">
+              Friday 2:15pm
+            </h2>
+          </section>
+        </div>
+      </div>
+
+      <!--Week forecast
+
+ <div class="week container">
+	 <section class="flex">
+	 <h2 id="date-time">Thursday</h2>
+		 <h5 class="icon-sm">☀️88°F</h5>
+	 </section>
+	 <section class="flex">
+	 <h2 id="date-time">Friday</h2>
+		 <h5 class="icon-sm">☀️88°F</h5>
+	 </section>
+	 <section class="flex">
+	 <h2 id="date-time">Saturday</h2>
+		 <h5 class="icon-sm">☀️88°F</h5>
+	 </section>
+	 <section class="flex">
+	 <h2 id="date-time">Sunday</h2>
+		 <div id="right">
+		 <h5 class="icon-sm">☀️88°F</h5>
+		 </div>
+	 </section>
+	 <section class="flex">
+	 <h2 id="date-time">Monday</h2>
+		 <h5 class="icon-sm">☀️88°F</h5>
+	 </section>
+ </div>
+
+-->
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
