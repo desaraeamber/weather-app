@@ -3,12 +3,13 @@
   <head>
     <title>Weather App</title>
     <meta charset="UTF-8" />
+   
     <link rel="stylesheet" href="src/styles.css" />
+   
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
-    <div class="full-container">
       <div class="main container">
         <div class="search">
           <form>
@@ -23,11 +24,8 @@
           </form>
         </div>
 
-        <label class="switch">
-          <input type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-        <h4 class="slider-degrees-c">°C</h4>
+
+
         <div class="flex">
           <section class="temperature-section">
             <h3 class="icon">☀️</h3>
@@ -35,55 +33,79 @@
               90
             </h1>
             <h3 class="degrees">°F</h3>
+            <div class="details">
+                <ul class="details-list">
+                <li><h4>Precipitation: 80%</h4></li>
+                <li><h4>Humidity: 76%</h4></li>
+                <li><h4>Wind: 2 mph</h4></li>
+                </ul>
+            </div>
+
           </section>
           <section class="location">
             <h1 id="city-name">
-              New York, NY
+              New York
             </h1>
             <h2 id="date-time">
               Friday 2:15pm
             </h2>
           </section>
         </div>
-        
-        <div class="attribution">
-            <a href="https://github.com/desaraeamber/weather-app">
-                Open-source code
-            </a> by Desarae Lesley
+
+
+        <div class="flex">
+            <section class="next-days">
+                <ul>
+                    <li>Sat</li>
+                   <li><h3 class="sm-icon">☁️</h3></li>
+                   <li><h4>88°</h4></li> 
+                </ul>
+                </section>
+
+                <section class="next-days">
+                <ul>
+                    <li>Sun</li>
+                   <li><h3 class="sm-icon">☁️</h3></li>
+                   <li><h4>88°</h4></li> 
+                </ul>
+                </section>
+
+                <section class="next-days">
+                <ul>
+                    <li>Mon</li>
+                   <li><h3 class="sm-icon">☁️</h3></li>
+                   <li><h4>88°</h4></li>  
+                </ul>
+                </section>
+
+                <section class="next-days">
+                <ul>
+                    <li>Tues</li>
+                   <li><h3 class="sm-icon">☁️</h3></li>
+                   <li><h4>88°</h4></li> 
+                </ul>
+                </section>
+
+                <section class="next-days">
+                <ul>
+                    <li>Wed</li>
+                   <li><h3 class="sm-icon">☁️</h3></li>
+                   <li><h4>88°</h4></li> 
+                </ul>
+            </section>
+</div>
         </div>
 
       </div>
       
 
-      <!--Week forecast
+    
 
- <div class="week container">
-	 <section class="flex">
-	 <h2 id="date-time">Thursday</h2>
-		 <h5 class="icon-sm">☀️88°F</h5>
-	 </section>
-	 <section class="flex">
-	 <h2 id="date-time">Friday</h2>
-		 <h5 class="icon-sm">☀️88°F</h5>
-	 </section>
-	 <section class="flex">
-	 <h2 id="date-time">Saturday</h2>
-		 <h5 class="icon-sm">☀️88°F</h5>
-	 </section>
-	 <section class="flex">
-	 <h2 id="date-time">Sunday</h2>
-		 <div id="right">
-		 <h5 class="icon-sm">☀️88°F</h5>
-		 </div>
-	 </section>
-	 <section class="flex">
-	 <h2 id="date-time">Monday</h2>
-		 <h5 class="icon-sm">☀️88°F</h5>
-	 </section>
- </div>
-
--->
-
+    </div>
+    <div class="attribution">
+        <a href="https://github.com/desaraeamber/weather-app">
+            Open-source code
+        </a> by Desarae Lesley
     </div>
   
     <script src="src/index.js"></script>
