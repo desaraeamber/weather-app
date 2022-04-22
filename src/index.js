@@ -40,6 +40,9 @@ function showCity(event) {
 let form = document.querySelector("form");
 form.addEventListener("submit", showCity);
 
+
+
+
 //Show temperature
 
 function showTemp(response) {
@@ -48,7 +51,22 @@ function showTemp(response) {
   degrees.innerHTML = `${temp}`;
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
-}
+  //Show Description
+  let description = document.querySelector("#description");
+  let weather = response.data.weather[0].main;
+  description.innerHTML = `${weather}`;
+  //Show Details
+  let humidity = document.querySelector("#humidity")
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  //Icons
+  let icon = document.querySelector(".icon")
+  console.log(response);
+  }
+
+
+
 
 //BONUS: Allow current button to display current position temp and name
 
@@ -64,3 +82,5 @@ function showPosition(position) {
 
 let currentButton = document.querySelector(".current");
 currentButton.addEventListener("click", currentPosition);
+
+
