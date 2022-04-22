@@ -28,16 +28,17 @@
 
         <div class="flex">
           <section class="temperature-section">
-            <h3 class="icon">☀️</h3>
+            <h3 class="icon"><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+              <lottie-player src="https://assets9.lottiefiles.com/temp/lf20_y6mY2A.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop autoplay></lottie-player></h3>
             <h1 class="temp">
               90
             </h1>
-            <h3 class="degrees">°F</h3>
+            <h3 class="degrees">°F | <h3 class="degrees celsius"> °C<h3></h3>
             <div class="details">
                 <ul class="details-list">
-                <li><h4>Precipitation: 80%</h4></li>
-                <li><h4>Humidity: 76%</h4></li>
-                <li><h4>Wind: 2 mph</h4></li>
+                <li><h4>Precipitation: <h4 id="precipitation">80</h4>%</h4></li>
+                <li><h4>Humidity: <h4 id="humidity">76</h4>%</h4></li>
+                <li><h4>Wind: <h4 id="wind">2</h4></h4>mph</li>
                 </ul>
             </div>
 
@@ -48,6 +49,8 @@
             </h1>
             <h2 id="date-time">
               Friday 2:15pm
+            </h2><h2 id="description">
+              Sunny
             </h2>
           </section>
         </div>
