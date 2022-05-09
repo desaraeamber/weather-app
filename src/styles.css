@@ -119,11 +119,16 @@ body {
   }
   
   .degrees {
+    display: flex;
+    width: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 8px;
     position: relative;
     top: -15px;
     font-size: 1rem;
-    left: 0px;
-    font-weight: 400;
+    left: 5px;
+    font-weight: 300;
   }
   
   a {
@@ -140,7 +145,7 @@ body {
 
   .details {
       display: block;
-      margin-left: 15px;
+      margin-left: 20px;
       margin-right: 20px;
   }
 
@@ -155,7 +160,7 @@ body {
   }
 
  li {
-      line-height: 13pt; 
+      line-height: 15pt; 
       color: gray;
   }
   
@@ -165,7 +170,7 @@ body {
   
   .temp {
     font-size: 4em;
-    margin-left: 14px;
+    margin-left: 10px;
   }
   
   .location {

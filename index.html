@@ -17,6 +17,7 @@
               type="text"
               id="form-input"
               placeholder="Enter your city"
+              autocomplete="off"
               value=""
             />
             <button class="search-button" type="submit">Search</button>
@@ -32,10 +33,10 @@
             <h1 class="temp">
               90
             </h1>
-            <h3 class="degrees">°F | <h3 class="degrees celsius"> °C<h3></h3>
+            <span class="degrees"><a class="fahren-link" href="#"><h3 class="fahren-degrees">°F</a></h3> | <a id="celsius-link" href="#"><h3 class="celsius-degrees">°C</h3></a></span>
             <div class="details">
                 <ul class="details-list">
-                <li><h4>Precipitation: <h4 id="precipitation">80</h4>%</h4></li>
+                
                 <li><h4>Humidity: <h4 id="humidity">76</h4>%</h4></li>
                 <li><h4>Wind: <h4 id="wind">2</h4></h4>mph</li>
                 </ul>

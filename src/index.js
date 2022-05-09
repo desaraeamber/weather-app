@@ -46,8 +46,10 @@ form.addEventListener("submit", showCity);
 //Show temperature
 
 function showTemp(response) {
-  let temp = Math.round(response.data.main.temp);
+  temp = Math.round(response.data.main.temp);
+
   let degrees = document.querySelector(".temp");
+
   degrees.innerHTML = `${temp}`;
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = response.data.name;
@@ -66,9 +68,37 @@ function showTemp(response) {
     "src", 
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   )
+
+
+
+
+  }
+
+  //Display Celsius on link
+  function displayCelsiusTemp(event) {
+    event.preventDefault();
+    let degreeElement = document.querySelector(".temp");
+    let celsiusTemp = (temp - 32) * 5 / 9;
+    degreeElement.innerHTML = Math.round(celsiusTemp);
+  }
+
+  //Display fahrenheit on link
+  function displayFahrenTemp(event) {
+    event.preventDefault();
+    let fahrenTemp = (temp * 9) / 5 + 32;
+    let degreeElement = document.querySelector(".temp");
+    degreeElement.innerHTML = Math.round(fahrenTemp);
   }
 
 
+  let fahrenLink = document.querySelector(".fahren-link");
+  fahrenLink.addEventListener("click", displayFahrenTemp);
+  
+      
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+ let temp = null;
 
 
 //BONUS: Allow current button to display current position temp and name
