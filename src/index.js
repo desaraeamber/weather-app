@@ -85,7 +85,7 @@ function showTemp(response) {
   //Display fahrenheit on link
   function displayFahrenTemp(event) {
     event.preventDefault();
-    let fahrenTemp = (temp * 9) / 5 + 32;
+    let fahrenTemp = (temp);
     let degreeElement = document.querySelector(".temp");
     degreeElement.innerHTML = Math.round(fahrenTemp);
   }
