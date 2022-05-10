@@ -80,6 +80,11 @@ function showTemp(response) {
     let degreeElement = document.querySelector(".temp");
     let celsiusTemp = (temp - 32) * 5 / 9;
     degreeElement.innerHTML = Math.round(celsiusTemp);
+
+    //Remove active class from fahrenheit link
+    fahrenLink.classList.remove("active");
+    //Add active class from celsius link
+    celsiusLink.classList.add("active");
   }
 
   //Display fahrenheit on link
@@ -88,10 +93,14 @@ function showTemp(response) {
     let fahrenTemp = (temp);
     let degreeElement = document.querySelector(".temp");
     degreeElement.innerHTML = Math.round(fahrenTemp);
+    //Remove active class from celsius link
+    celsiusLink.classList.remove("active");
+    //Add active class from fahrenheit link
+    fahrenLink.classList.add("active");
   }
 
 
-  let fahrenLink = document.querySelector(".fahren-link");
+  let fahrenLink = document.querySelector("#fahren-link");
   fahrenLink.addEventListener("click", displayFahrenTemp);
   
       
