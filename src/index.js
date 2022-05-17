@@ -15,9 +15,45 @@ let day = days[now.getDay()];
 //let hours = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"];
 let hour = now.getHours();
 let minute = now.getMinutes();
+//minute = minute > 9 ? minute : '0' + minute;
 
 let timeDate = document.querySelector("#date-time");
 timeDate.innerHTML = day + " " + hour + ":" + minute;
+
+//Display 5 day forecast
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = document.querySelector("#forecast");
+  let forecastHMTL = `<div id="forecast" class="flex">`;
+  
+  let days = ["Sat", "Sun", "Mon", "Tues", "Wed"];
+  days.forEach(function(day) {
+    forecastHMTL = forecastHMTL + 
+    `
+    <section class="next-days">
+    <ul>
+       <li id="forecast-day">${day}</li>
+         <li><img class="sm-icon" src="http://openweathermap.org/img/wn/02d@2x.png" width="80px"></li>
+        <li>
+          <h4>88°</h4>
+          <h4 class="gray">32°</h4>
+         </li> 
+     </ul>
+     </section>
+     `
+  });
+
+  forecastHMTL = forecastHMTL + `</div>`;
+  console.log(forecastHMTL);
+  forecast.innerHTML = forecastHMTL;
+}
+
+//Log coordinates for API forcast
+function getForecast(coordinates) {
+  let apiKey = "6bbab2b3b0c97103f3d9e1c12e1a2914";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 //Search city and display city name & current temp
 function searchEngine(city) {
@@ -27,6 +63,7 @@ function searchEngine(city) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
 
+
 //Show city name
 function showCity(event) {
   event.preventDefault();
@@ -35,11 +72,11 @@ function showCity(event) {
   event.preventDefault();
   cityName.innerHTML = `${city.value}`;
   searchEngine(city.value);
+
 }
 
 let form = document.querySelector("form");
 form.addEventListener("submit", showCity);
-
 
 
 
@@ -67,10 +104,9 @@ function showTemp(response) {
   icon.setAttribute(
     "src", 
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  )
+  );
 
-
-
+  getForecast(response.data.coord);
 
   }
 
@@ -108,7 +144,6 @@ function showTemp(response) {
   celsiusLink.addEventListener("click", displayCelsiusTemp);
 
  let temp = null;
-
 
 //BONUS: Allow current button to display current position temp and name
 

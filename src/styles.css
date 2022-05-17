@@ -13,16 +13,16 @@ body {
   }
   
   h2 {
-      margin: 0;
+    margin: 0;
     font-size: 1.15em;
     color: gray;
-    font-weight: 600;
+    font-weight: 500;
   }
   
   h4 {
     display: inline;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
   }
   
   .icon {
@@ -79,10 +79,11 @@ body {
   .flex {
     display: flex;
     align-items: center;
-    justify-content: center;
-  
+    justify-content: space-between;
+    width: 100%;
   }
   
+
   .main {
     height: auto;
   }
@@ -203,24 +204,28 @@ body {
   }
   
   .next-days {
-      margin-top: 20px;
+    margin-top: 20px;
     justify-content: center;
     align-items: center;
-    padding-right: 20px;
+    padding: 10px;
     width: 100%;
   }
 
   .next-days li {
       font-size: 1.15em;
-      padding-bottom: 10px;
-      padding-top: 10px;
+      padding-bottom: 5px;
+      padding-top: 5px;
       color: black;
-      font-weight: 600;
   }
 
-  .next-days ul:active {
+  .next-days ul:hover {
     background-color: #daf0ff69;
     border-radius: 8px;
+  }
+
+  #forecast-day {
+    color: gray;
+    font-weight: 500;
   }
 
 
@@ -232,6 +237,10 @@ body {
   }
 
   
+  .gray {
+    color: gray;
+    padding-left: 3px;
+  }
   
 
   
