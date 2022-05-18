@@ -22,21 +22,22 @@ timeDate.innerHTML = day + " " + hour + ":" + minute;
 
 //Display 5 day forecast
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecastData = response.data.daily;
+  
   let forecast = document.querySelector("#forecast");
   let forecastHMTL = `<div id="forecast" class="flex">`;
   
   let days = ["Sat", "Sun", "Mon", "Tues", "Wed"];
-  days.forEach(function(day) {
+  days.forEach(function(forecastDay) {
     forecastHMTL = forecastHMTL + 
     `
     <section class="next-days">
     <ul>
-       <li id="forecast-day">${day}</li>
-         <li><img class="sm-icon" src="http://openweathermap.org/img/wn/02d@2x.png" width="80px"></li>
+       <li id="forecast-day">${forecastDay.dt}</li>
+         <li><img class="sm-icon" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="80px"></li>
         <li>
-          <h4>88°</h4>
-          <h4 class="gray">32°</h4>
+          <h4>${forecastDay.temp.max}°</h4>
+          <h4 class="gray">${forecastDay.temp.min}°</h4>
          </li> 
      </ul>
      </section>
@@ -44,7 +45,6 @@ function displayForecast(response) {
   });
 
   forecastHMTL = forecastHMTL + `</div>`;
-  console.log(forecastHMTL);
   forecast.innerHTML = forecastHMTL;
 }
 
@@ -161,3 +161,4 @@ let currentButton = document.querySelector(".current");
 currentButton.addEventListener("click", currentPosition);
 
 
+searchEngine("New York");
