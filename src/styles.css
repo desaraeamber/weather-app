@@ -41,13 +41,12 @@ body {
     border: 1px solid lightgray;
     border-radius: 8px;
     margin: 20px auto;
-    background-color: #f7f7f7;
+    background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
   }
   
   .search {
     height: auto;
-    background-color: #f7f7f7;
     margin-bottom: 50px;
   }
   
