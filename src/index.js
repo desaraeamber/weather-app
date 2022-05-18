@@ -20,28 +20,46 @@ let minute = now.getMinutes();
 let timeDate = document.querySelector("#date-time");
 timeDate.innerHTML = day + " " + hour + ":" + minute;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thur",
+    "Fri",
+    "Sat"
+  ];
+  return days[day];
+}
+
+
+
 //Display 5 day forecast
 function displayForecast(response) {
   let forecastData = response.data.daily;
-  
+
   let forecast = document.querySelector("#forecast");
   let forecastHMTL = `<div id="forecast" class="flex">`;
   
-  let days = ["Sat", "Sun", "Mon", "Tues", "Wed"];
-  days.forEach(function(forecastDay) {
+  forecastData.forEach(function (forecastDay, index)  {
+    if (index < 5) {
     forecastHMTL = forecastHMTL + 
     `
     <section class="next-days">
     <ul>
-       <li id="forecast-day">${forecastDay.dt}</li>
-         <li><img class="sm-icon" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="80px"></li>
+       <li id="forecast-day">${formatDay(forecastDay.dt)}</li>
+         <li><img class="sm-icon" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="60px"></li>
         <li>
-          <h4>${forecastDay.temp.max}°</h4>
-          <h4 class="gray">${forecastDay.temp.min}°</h4>
+          <h4>${Math.round(forecastDay.temp.max)}°</h4>
+          <h4 class="gray">${Math.round(forecastDay.temp.min)}°</h4>
          </li> 
      </ul>
      </section>
      `
+    }
   });
 
   forecastHMTL = forecastHMTL + `</div>`;
