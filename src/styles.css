@@ -120,9 +120,7 @@ body {
   
   .degrees {
     display: flex;
-    width: 52px;
     align-items: center;
-    justify-content: space-between;
     padding-right: 8px;
     position: relative;
     top: -15px;
@@ -146,11 +144,6 @@ body {
     height: 100px;
   }
 
-.temperature-section  .active {
-    color: black;
-
-    cursor: pointer;
-  }
 
   .temperature-section h3 {
     font-weight: 300;
@@ -158,8 +151,7 @@ body {
 
   .details {
       display: block;
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: 10px;
   }
 
   .details-list {
@@ -183,7 +175,6 @@ body {
   
   .temp {
     font-size: 4em;
-    margin-left: 10px;
   }
   
   .location {

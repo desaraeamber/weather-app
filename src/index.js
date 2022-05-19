@@ -20,6 +20,7 @@ let minute = now.getMinutes();
 let timeDate = document.querySelector("#date-time");
 timeDate.innerHTML = day + " " + hour + ":" + minute;
 
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -34,8 +35,6 @@ function formatDay(timestamp) {
   ];
   return days[day];
 }
-
-
 
 //Display 5 day forecast
 function displayForecast(response) {
@@ -128,38 +127,7 @@ function showTemp(response) {
 
   }
 
-  //Display Celsius on link
-  function displayCelsiusTemp(event) {
-    event.preventDefault();
-    let degreeElement = document.querySelector(".temp");
-    let celsiusTemp = (temp - 32) * 5 / 9;
-    degreeElement.innerHTML = Math.round(celsiusTemp);
 
-    //Remove active class from fahrenheit link
-    fahrenLink.classList.remove("active");
-    //Add active class from celsius link
-    celsiusLink.classList.add("active");
-  }
-
-  //Display fahrenheit on link
-  function displayFahrenTemp(event) {
-    event.preventDefault();
-    let fahrenTemp = (temp);
-    let degreeElement = document.querySelector(".temp");
-    degreeElement.innerHTML = Math.round(fahrenTemp);
-    //Remove active class from celsius link
-    celsiusLink.classList.remove("active");
-    //Add active class from fahrenheit link
-    fahrenLink.classList.add("active");
-  }
-
-
-  let fahrenLink = document.querySelector("#fahren-link");
-  fahrenLink.addEventListener("click", displayFahrenTemp);
-  
-      
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.addEventListener("click", displayCelsiusTemp);
 
  let temp = null;
 
