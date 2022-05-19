@@ -12,15 +12,18 @@ let days = [
 ];
 let day = days[now.getDay()];
 
-//let hours = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"];
+//Display 12 hour time and double digit mins
 let hour = now.getHours();
 let minute = now.getMinutes();
-//minute = minute > 9 ? minute : '0' + minute;
-
+minute = minute > 9 ? minute : '0' + minute;
+hour = (hour % 12) || 12;
 let timeDate = document.querySelector("#date-time");
 timeDate.innerHTML = day + " " + hour + ":" + minute;
 
 
+
+
+//Display days for 5-day forecast
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -44,7 +47,7 @@ function displayForecast(response) {
   let forecastHMTL = `<div id="forecast" class="flex">`;
   
   forecastData.forEach(function (forecastDay, index)  {
-    if (index < 5) {
+    if (index < 6 && index > 0) {
     forecastHMTL = forecastHMTL + 
     `
     <section class="next-days">
@@ -98,6 +101,9 @@ form.addEventListener("submit", showCity);
 
 
 //Show temperature
+
+
+
 
 function showTemp(response) {
   temp = Math.round(response.data.main.temp);
