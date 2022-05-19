@@ -47,7 +47,7 @@ function displayForecast(response) {
   let forecastHMTL = `<div id="forecast" class="flex">`;
   
   forecastData.forEach(function (forecastDay, index)  {
-    if (index < 6 && index > 0) {
+    if (index < 5) {
     forecastHMTL = forecastHMTL + 
     `
     <section class="next-days">
